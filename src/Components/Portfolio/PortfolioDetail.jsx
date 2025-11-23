@@ -37,7 +37,7 @@ const PortfolioDetailSection = () => {
                             <div className="col">
                                 <div className="card project-detail">
                                 <h4 className="secondary-accent">Service</h4>
-                                <p>On-Page SEO</p>
+                                <p>Our Services</p>
                                 </div>
                             </div>
                             <div className="col">
@@ -131,7 +131,7 @@ const PortfolioDetailSection = () => {
                             <div className="col">
                                 <div className="image-container">
                                 <img
-                                    src="/assets/images/dummy-img-600x400.jpg"
+                                    src="/assets/images/dummy-img-600x400.png"
                                     alt="Portfolio Detail Img"
                                     className="img-fluid"
                                 />

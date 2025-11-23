@@ -30,7 +30,7 @@ const SinglePostSection = () => {
 
                     <div className="image-container">
                         <img
-                        src="/assets/images/dummy-img-600x400.jpg"
+                        src="/assets/images/dummy-img-600x400.png"
                         alt="Post Banner"
                         className="post-detail-img"
                         />
@@ -57,7 +57,7 @@ const SinglePostSection = () => {
                             <div className="col">
                                 <div className="image-container">
                                     <img
-                                    src="/assets/images/dummy-img-600x400.jpg"
+                                    src="/assets/images/dummy-img-600x400.png"
                                     alt="Post Image"
                                     className="img-fluid"
                                     />

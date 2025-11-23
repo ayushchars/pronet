@@ -6,7 +6,7 @@ import HeadTitle from "../../Components/Head/HeadTitle";
 const FaqPage = () => {
     return(
         <>
-            <HeadTitle title="FAQs - Aspire - SEO & Digital Marketing Agency" />
+            <HeadTitle title="FAQs - pro-net - SEO & Digital Marketing Agency" />
             <BannerInnerSection title="Frequently Asked Questions" currentPage="Frequently Asked Questions" />
             <FaqSection />
         </>

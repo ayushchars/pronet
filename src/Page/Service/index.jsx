@@ -13,7 +13,7 @@ import HeadTitle from "../../Components/Head/HeadTitle";
 const ServicePage = () => {
     return(
         <>
-            <HeadTitle title="Services - Aspire - SEO & Digital Marketing Agency" />
+            <HeadTitle title="Services - pro-net - SEO & Digital Marketing Agency" />
             <BannerInnerSection title="Services" currentPage="Services" />
             <PartnersipSection />
             <ServiceSection />

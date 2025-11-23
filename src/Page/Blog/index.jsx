@@ -6,7 +6,7 @@ import HeadTitle from "../../Components/Head/HeadTitle";
 const BlogPage = () => {
     return(
         <>
-            <HeadTitle title="Blog Archive - Aspire - SEO & Digital Marketing Agency" />
+            <HeadTitle title="Blog Archive - pro-net - SEO & Digital Marketing Agency" />
             <BannerInnerSection title="Blog Archive" currentPage="Blog Archive" />
             <BlogSectionExtend/>
         </>

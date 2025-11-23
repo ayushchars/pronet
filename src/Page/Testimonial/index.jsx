@@ -6,7 +6,7 @@ import HeadTitle from "../../Components/Head/HeadTitle";
 const TestimonialPage = () => {
     return(
         <>
-            <HeadTitle title="Testimonials - Aspire - SEO & Digital Marketing Agency" />
+            <HeadTitle title="Testimonials - pro-net - SEO & Digital Marketing Agency" />
             <BannerInnerSection title="Testimonial" currentPage="Testimonial" />
             <TestimonialPageSection />
         </>

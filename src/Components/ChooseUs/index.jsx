@@ -11,7 +11,7 @@ const WhyChooseUsSection = () => {
                     <div className="d-flex flex-column flex-lg-row gap-4">
                         <div className="whychooseus-image">
                             <div className="image-container">
-                                <img src="./assets/images/dummy-img-600x400.jpg" alt="Why Choose Us" className="img-fluid animate-box animated animate__animated" data-animate="animate__fadeInLeft" />
+                                <img src="./assets/images/dummy-img-600x400.png" alt="Why Choose Us" className="img-fluid animate-box animated animate__animated" data-animate="animate__fadeInLeft" />
                             </div>
                             <div className="client-rating-card animate-box animated animate__animated" data-animate="animate__zoomIn">
                                 <div className="client-rating-card-content">

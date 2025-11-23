@@ -23,7 +23,7 @@ const AboutSection = () => {
                             </div>
                             <div className="about-image-wrapper">
                                 <div className="image-container">
-                                    <img src="/assets/images/dummy-img-600x400.jpg" alt="About Image" className="img-fluid animate-box animated animate__animated" data-animate="animate__fadeInRight" />
+                                    <img src="/assets/images/dummy-img-600x400.png" alt="About Image" className="img-fluid animate-box animated animate__animated" data-animate="animate__fadeInRight" />
                                 </div>
                                 <div className="card about-traffic-card animate-box animated animate__animated" data-animate="animate__zoomIn">
                                     <div className="d-flex flex-column gspace-2 align-self-center text-center">

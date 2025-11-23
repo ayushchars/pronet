@@ -6,7 +6,7 @@ function Sidebar() {
     const sidebarRef = useRef(null);
 
     useEffect(() => {
-        const menuBtn = document.querySelector(".nav-btn"); // tombol dari Navbar
+        const menuBtn = document.querySelector(".nav-btn"); 
         const closeBtn = sidebarRef.current?.querySelector(".close-btn");
         const overlay = overlayRef.current;
         const sidebar = sidebarRef.current;
@@ -71,7 +71,7 @@ function Sidebar() {
                 <div className="sidebar-header">
                     <div className="logo">
                         <img
-                        src="/assets/images/logo.webp"
+                        src="/assets/images/logo2.png"
                         className="img-fluid logo"
                         alt="Logo"
                         />
@@ -106,7 +106,7 @@ function Sidebar() {
                         </ul>
                     </li>
 
-                    <li className="sidebar-dropdown below-dropdown">
+                    {/* <li className="sidebar-dropdown below-dropdown">
                         <div className="dropdown-header">
                         <a href="#">Portfolio</a>
                         <button className="sidebar-dropdown-btn">
@@ -121,7 +121,7 @@ function Sidebar() {
                             <NavLink to="/portfolio-detail">Portfolio Details</NavLink>
                         </li>
                         </ul>
-                    </li>
+                    </li> */}
 
                     <li className="sidebar-dropdown">
                         <div className="dropdown-header">
@@ -143,15 +143,15 @@ function Sidebar() {
                             <li>
                                 <NavLink to="/faq">FAQs</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink to="/404-page">404 Page</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/blog">Blog Archive</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/single-post">Single Post</NavLink>
-                            </li>
+                                <NavLink to="/single-post">Single Post</NavLink> */}
+                            {/* </li> */}
                         </ul>
                     </li>
 

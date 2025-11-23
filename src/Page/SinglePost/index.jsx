@@ -6,7 +6,7 @@ import SinglePostSection from "../../Components/Blog/SinglePost";
 const SinglePostPage = () => {
     return(
         <>
-            <HeadTitle title="Single Post - Aspire - SEO & Digital Marketing Agency" />
+            <HeadTitle title="Single Post - pro-net - SEO & Digital Marketing Agency" />
             <BannerInnerSection title="Creating Compelling Content That Convert" currentPage="Creating Compelling Content That Convert" />
             <SinglePostSection />
         </>

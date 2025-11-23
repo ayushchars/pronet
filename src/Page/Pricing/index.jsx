@@ -9,7 +9,7 @@ import HeadTitle from "../../Components/Head/HeadTitle";
 const PricingPage = () => {
     return(
         <>       
-            <HeadTitle title="Pricing Plan - Aspire - SEO & Digital Marketing Agency" />
+            <HeadTitle title="Pricing Plan - pro-net - SEO & Digital Marketing Agency" />
             <BannerInnerSection title="Pricing Plan" currentPage="Pricing Plan" />
             <PricingSection />
             <CtaSection />

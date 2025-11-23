@@ -9,7 +9,7 @@ import HeadTitle from "../../Components/Head/HeadTitle";
 const TeamPage = () => {
     return(
         <>
-            <HeadTitle title="Team - Aspire - SEO & Digital Marketing Agency" />
+            <HeadTitle title="Team - pro-net - SEO & Digital Marketing Agency" />
             <BannerInnerSection title="Team" currentPage="Team" />
             <TeamSectionExtend />
             <CtaSection />

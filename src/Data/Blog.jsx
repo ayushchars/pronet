@@ -1,7 +1,7 @@
 export const blogdata = [
     {
         id: 1,
-        image: "/assets/images/dummy-img-600x700.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1663040328859-48bddaa9dfeb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Getting Started with Forex Trading: A Beginner's Guide",
         content: "Discover the basics of forex trading, essential terms, and how to make your first profitable trade with confidence.",
         link: "#",
@@ -10,7 +10,7 @@ export const blogdata = [
     },
     {
         id: 2,
-        image: "/assets/images/dummy-img-600x700.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1663040328859-48bddaa9dfeb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Maximizing Passive Income with Affiliate Programs",
         content: "Learn strategies to grow your earnings by leveraging affiliate opportunities within Pro Net Solutions’ ecosystem.",
         link: "#",
@@ -19,7 +19,7 @@ export const blogdata = [
     },
     {
         id: 3,
-        image: "/assets/images/dummy-img-600x700.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1663040328859-48bddaa9dfeb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Winning Strategies in Fantasy Gaming & eSports",
         content: "Explore top tactics for success in fantasy gaming, sports betting, and eSports competitions.",
         link: "#",
@@ -28,7 +28,7 @@ export const blogdata = [
     },
     {
         id: 4,
-        image: "/assets/images/dummy-img-600x700.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1663040328859-48bddaa9dfeb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Starting Your Dropshipping Business Made Easy",
         content: "A practical roadmap for launching and scaling your online store with Pro Net Solutions’ dropshipping solutions.",
         link: "#",
@@ -37,7 +37,7 @@ export const blogdata = [
     },
     {
         id: 5,
-        image: "/assets/images/dummy-img-600x700.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1663040328859-48bddaa9dfeb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "How to Read Financial Market Signals Effectively",
         content: "Master the art of analyzing trading signals—identify trends, set alerts, and boost your trading success.",
         link: "#",
@@ -46,7 +46,7 @@ export const blogdata = [
     },
     {
         id: 6,
-        image: "/assets/images/dummy-img-600x700.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1663040328859-48bddaa9dfeb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         title: "Essential Risk Management Tips for Traders",
         content: "Safeguard your investments and optimize profits with our essential risk management guide for all traders.",
         link: "#",

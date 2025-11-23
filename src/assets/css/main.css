@@ -1,7 +1,7 @@
 /*===============================================
-Template Name: Aspire - SEO Digital Marketing Agency React Bootstrap Template
+Template Name: pro-net - SEO Digital Marketing Agency React Bootstrap Template
 Author:  https://themeforest.net/user/fox_creation
-Description: Aspire is modern and elegant React Js Bootstrap Template for SEO & digital marketing agencies. You can use this creative template for businesses offering social media marketing, seo agency, advertising company, media agency, digital marketing and many more to effortlessly showcase your expertise.
+Description: pro-net is modern and elegant React Js Bootstrap Template for SEO & digital marketing agencies. You can use this creative template for businesses offering social media marketing, seo agency, advertising company, media agency, digital marketing and many more to effortlessly showcase your expertise.
 Version: 1.0.0
 ================================================*/
 
@@ -837,7 +837,7 @@ textarea.error-border{
 
 .card-service.card-service--highlight {
     background-color: var(--accent-color-4);
-    background-image: url('/assets/images/dummy-img-600x600.jpg');
+    background-image: url('/assets/images/dummy-img-600x600.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1086,7 +1086,7 @@ textarea.error-border{
 /* 13.7. Client Rating Card */
 
 .client-rating-card{
-    background-image: url('/assets/images/dummy-img-600x600.jpg');
+    background-image: url('/assets/images/dummy-img-600x600.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1235,7 +1235,7 @@ textarea.error-border{
 /* 15. Banner Styles */
 
 .banner-home{
-    background-image: url('/assets/images/dummy-img-1920x900.jpg');
+    background-image: url('/assets/images/dummy-img-1920x900.png');
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -1263,7 +1263,7 @@ textarea.error-border{
 }
 
 .banner-inner{
-    background-image: url('/assets/images/dummy-img-1920x900.jpg');
+    background-image: url('/assets/images/dummy-img-1920x900.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1375,7 +1375,7 @@ textarea.error-border{
 }
 
 .cta-banner{
-    background-image: url('/assets/images/dummy-img-1920x900.jpg');
+    background-image: url('/assets/images/dummy-img-1920x900.png');
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -1441,7 +1441,7 @@ textarea.error-border{
 }
 
 .newsletter-bg{
-    background-image: url('/assets/images/dummy-img-1920x900.jpg');
+    background-image: url('/assets/images/dummy-img-1920x900.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1540,7 +1540,7 @@ textarea.error-border{
 }
 
 .other-services{
-    background-image: url('/assets/images/dummy-img-600x600.jpg');
+    background-image: url('/assets/images/dummy-img-600x600.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1787,7 +1787,7 @@ textarea.error-border{
 .price-container {
     position: relative;
     overflow: hidden;
-    background-image: url('/assets/images/dummy-img-1920x300.jpg');
+    background-image: url('/assets/images/dummy-img-1920x300.png');
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
@@ -1890,7 +1890,7 @@ textarea.error-border{
 }
 
 .testimonial-rating{
-    background-image: url('/assets/images/dummy-img-600x600.jpg');
+    background-image: url('/assets/images/dummy-img-600x600.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2010,7 +2010,7 @@ textarea.error-border{
 }
 
 .team-details-wrapper{
-    background-image: url('/assets/images/dummy-img-600x600.jpg');
+    background-image: url('/assets/images/dummy-img-600x600.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2130,7 +2130,7 @@ textarea.error-border{
 /* 28. About Styles */
 
 .about-traffic-card{
-    background-image: url('/assets/images/dummy-img-600x600.jpg');
+    background-image: url('/assets/images/dummy-img-600x600.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2279,7 +2279,7 @@ textarea.error-border{
 .counter-container{
     position: relative;
     padding: 2em 2em 2em 2em;
-    background-image: url('/assets/images/dummy-img-1920x900.jpg');
+    background-image: url('/assets/images/dummy-img-1920x900.png');
     border-radius: var(--global-border-radius);
     z-index: 1;
     overflow: hidden;

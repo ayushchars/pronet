@@ -30,7 +30,7 @@ const Footer = () => {
                                         <li>
                                             <div className="d-flex flex-row align-items-center gspace-2 secondary-accent">
                                                 <i className="fa-solid fa-envelope-open-text"></i>
-                                                <span>aspire@dummy.com</span>
+                                                <span>pro-net@dummy.com</span>
                                             </div>
                                         </li>
                                         <li>
@@ -50,17 +50,17 @@ const Footer = () => {
                                         <li><a href="/faq">FAQs</a></li>
                                     </ul>
                                 </div>
-                                <div className="footer-services">
+                                {/* <div className="footer-services">
                                     <h4 className="accent-color">Services</h4>
                                     <ul className="footer-list">
-                                        <li><a href="/services">On-Page SEO</a></li>
+                                        <li><a href="/services">Our Services</a></li>
                                         <li><a href="/services">Content Marketing</a></li>
                                         <li><a href="/services">Off-Page SEO</a></li>
                                         <li><a href="/services">Social Media Marketing</a></li>
                                         <li><a href="/services">Analytics & Reporting</a></li>
                                         <li><a href="/services">Influencer Marketing</a></li>
                                     </ul>
-                                </div>
+                                </div> */}
                                 <div className="footer-cta">
                                     <h4 className="accent-color">Work Days</h4>
                                     <p>
