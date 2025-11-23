@@ -45,7 +45,7 @@ const Footer = () => {
                                     <h4 className="accent-color">Quick Links</h4>
                                     <ul className="footer-list">
                                         <li><a href="/about">About</a></li>
-                                        <li><a href="/contact">Contact</a></li>
+                                        <li><a href="#">Contact</a></li>
                                         <li><a href="/team">Team</a></li>
                                         <li><a href="/faq">FAQs</a></li>
                                     </ul>
@@ -74,7 +74,7 @@ const Footer = () => {
                                         </p>
                                     </div>
                                     <div>
-                                        <a href="/contact" className="btn btn-accent">Contact Us</a>
+                                        <a href="#" className="btn btn-accent">Contact Us</a>
                                     </div>
                                 </div>
                             </div>

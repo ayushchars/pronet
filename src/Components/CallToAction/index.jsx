@@ -14,7 +14,7 @@ const CtaSection =() => {
                                 <h2 className="secondary-accent">Unlock Your Potential, Reach Out and Transform Your Business!</h2> 
                                 <p>Commodo facilisis egestas maximus volutpat iaculis maecenas augue tortor aptent. Efficitur interdum laoreet ullamcorper dis velit purus praesent conubia magna.</p>
                                 <div>
-                                    <a href="./contact" className="btn btn-secondary-accent">Contact Us</a>
+                                    <a href="#" className="btn btn-secondary-accent">Contact Us</a>
                                 </div>
                             </div>
                         </div>

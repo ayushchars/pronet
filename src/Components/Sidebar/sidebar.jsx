@@ -156,7 +156,7 @@ function Sidebar() {
                     </li>
 
                     <li className="below-dropdown">
-                        <NavLink to="/contact">Contact Us</NavLink>
+                        <NavLink to="#">Contact Us</NavLink>
                     </li>
                 </ul>
             </div>

@@ -104,7 +104,7 @@ const Navbar = () => {
                                     </li>
 
                                     <li className="nav-item">
-                                        <NavLink to="/contact" className="nav-link">
+                                        <NavLink to="#" className="nav-link">
                                             Contact
                                         </NavLink>
                                     </li>

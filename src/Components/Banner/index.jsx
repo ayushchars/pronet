@@ -38,7 +38,7 @@ const BannerHome =() => {
                             </div>
                             <div className="d-flex flex-wrap d-flex flex-wrap justify-content-between align-items-end z-2">
                                 <div>
-                                    <a href="./portfolio" className="btn btn-secondary-accent">View Portfolio</a>
+                                    <a href="#" className="btn btn-secondary-accent">View Portfolio</a>
                                 </div>
 
                                 <VideoButton videoUrl="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" />
