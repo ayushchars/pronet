@@ -135,23 +135,23 @@ export const meetingAPI = {
 // ===== ANNOUNCEMENT ENDPOINTS =====
 export const announcementAPI = {
   createAnnouncement: async (announcementData) => {
-    return apiCall('/announcement/create', 'POST', announcementData);
+    return apiCall('/announcements', 'POST', announcementData);
   },
 
   getAnnouncements: async () => {
-    return apiCall('/announcement/list', 'GET');
+    return apiCall('/announcements', 'GET');
   },
 
   getAnnouncement: async (announcementId) => {
-    return apiCall(`/announcement/${announcementId}`, 'GET');
+    return apiCall(`/announcements/${announcementId}`, 'GET');
   },
 
   updateAnnouncement: async (announcementId, data) => {
-    return apiCall(`/announcement/${announcementId}`, 'PUT', data);
+    return apiCall(`/announcements/${announcementId}`, 'PUT', data);
   },
 
   deleteAnnouncement: async (announcementId) => {
-    return apiCall(`/announcement/${announcementId}`, 'DELETE');
+    return apiCall(`/announcements/${announcementId}`, 'DELETE');
   },
 };
 

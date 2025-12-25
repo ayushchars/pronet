@@ -46,7 +46,10 @@ export default function Dashboard() {
         // Fetch announcements
         try {
           const announcementsRes = await announcementAPI.getAnnouncements();
-          setAnnouncements(Array.isArray(announcementsRes.data) ? announcementsRes.data : announcementsRes || []);
+          const announcementData = announcementsRes.data || announcementsRes;
+          // Handle nested response: announcementData.announcements or announcementData as array
+          const announcementList = announcementData?.announcements || announcementData?.message?.announcements || (Array.isArray(announcementData) ? announcementData : []);
+          setAnnouncements(Array.isArray(announcementList) ? announcementList : []);
         } catch (err) {
           console.warn("Could not fetch announcements:", err);
         }
@@ -255,25 +258,52 @@ export default function Dashboard() {
             paddingBottom: "12px",
           }}
         >
-          {["overview", "meetings", "announcements", "payments", "teams"].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              style={{
-                padding: "12px 24px",
-                backgroundColor: activeTab === tab ? "#11E44F" : "transparent",
-                color: activeTab === tab ? "#121212" : "#8AFFAC",
-                border: "none",
-                borderRadius: "8px",
-                cursor: "pointer",
-                fontWeight: activeTab === tab ? "bold" : "normal",
-                whiteSpace: "nowrap",
-                transition: "all 0.3s",
-              }}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
-          ))}
+          {["overview", "meetings", "announcements", "payments", "teams"].map((tab) => {
+            let count = 0;
+            if (tab === "meetings") count = meetings.length;
+            else if (tab === "announcements") count = announcements.length;
+            else if (tab === "payments") count = paymentHistory.length;
+            else if (tab === "teams") count = teams.length;
+
+            return (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                style={{
+                  padding: "12px 24px",
+                  backgroundColor: activeTab === tab ? "#11E44F" : "transparent",
+                  color: activeTab === tab ? "#121212" : "#8AFFAC",
+                  border: "none",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  fontWeight: activeTab === tab ? "bold" : "normal",
+                  whiteSpace: "nowrap",
+                  transition: "all 0.3s",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                {tab !== "overview" && (
+                  <span
+                    style={{
+                      backgroundColor: activeTab === tab ? "#121212" : "#11E44F",
+                      color: activeTab === tab ? "#11E44F" : "#121212",
+                      padding: "2px 8px",
+                      borderRadius: "12px",
+                      fontSize: "12px",
+                      fontWeight: "bold",
+                      minWidth: "24px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {count}
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
 
         {/* Overview Tab */}
@@ -523,8 +553,8 @@ export default function Dashboard() {
                 <ListItem
                   key={idx}
                   title={announcement.title}
-                  subtitle={announcement.content || "No description"}
-                  meta={announcement.priority || "Normal"}
+                  subtitle={announcement.description || "No description"}
+                  meta={announcement.flag || "Normal"}
                 />
               ))
             ) : (

@@ -20,6 +20,7 @@ export default function AnnouncementsPage() {
     title: "",
     content: "",
     priority: "Normal",
+    flag: "important",
     category: "General",
   });
 
@@ -38,7 +39,10 @@ export default function AnnouncementsPage() {
       setError("");
       const response = await announcementAPI.getAnnouncements();
       const data = response.data || response;
-      setAnnouncements(Array.isArray(data) ? data : []);
+      
+      // Handle nested response structure: data.announcements or data as array
+      const announcementList = data.announcements || (Array.isArray(data) ? data : []);
+      setAnnouncements(Array.isArray(announcementList) ? announcementList : []);
     } catch (err) {
       setError(err.message || "Failed to fetch announcements");
       setAnnouncements([]);
@@ -73,6 +77,7 @@ export default function AnnouncementsPage() {
         title: "",
         content: "",
         priority: "Normal",
+        flag: "important",
         category: "General",
       });
       setTimeout(() => {
@@ -153,6 +158,7 @@ export default function AnnouncementsPage() {
       title: selectedAnnouncement.title,
       content: selectedAnnouncement.content,
       priority: selectedAnnouncement.priority || "Normal",
+      flag: selectedAnnouncement.flag || "important",
       category: selectedAnnouncement.category || "General",
     });
     setIsEditing(true);
@@ -365,6 +371,20 @@ export default function AnnouncementsPage() {
                           >
                             {announcement.priority || "Normal"}
                           </span>
+                          <span
+                            style={{
+                              backgroundColor: announcement.flag === "important" ? "#11E44F" : "#8AFFAC",
+                              color: "#121212",
+                              padding: "4px 8px",
+                              borderRadius: "4px",
+                              fontSize: "11px",
+                              fontWeight: "bold",
+                              whiteSpace: "nowrap",
+                              textTransform: "capitalize",
+                            }}
+                          >
+                            {announcement.flag || "important"}
+                          </span>
                         </div>
                         <p
                           style={{
@@ -517,7 +537,7 @@ export default function AnnouncementsPage() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
+                  gridTemplateColumns: "1fr 1fr 1fr",
                   gap: "20px",
                   marginBottom: "30px",
                 }}
@@ -554,6 +574,39 @@ export default function AnnouncementsPage() {
                     <option value="Normal">Normal</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      color: "#8AFFAC",
+                      fontSize: "12px",
+                      textTransform: "uppercase",
+                      marginBottom: "8px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Flag
+                  </label>
+                  <select
+                    name="flag"
+                    value={formData.flag}
+                    onChange={handleFormChange}
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      backgroundColor: "#252525",
+                      border: "1px solid #313131",
+                      borderRadius: "8px",
+                      color: "#DAFAF4",
+                      fontSize: "14px",
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    <option value="important">Important</option>
+                    <option value="promotional">Promotional</option>
                   </select>
                 </div>
 
@@ -720,6 +773,19 @@ export default function AnnouncementsPage() {
                     }}
                   >
                     {selectedAnnouncement.priority || "Normal"}
+                  </span>
+                  <span
+                    style={{
+                      backgroundColor: selectedAnnouncement.flag === "important" ? "#11E44F" : "#8AFFAC",
+                      color: "#121212",
+                      padding: "6px 12px",
+                      borderRadius: "6px",
+                      fontSize: "12px",
+                      fontWeight: "bold",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {selectedAnnouncement.flag || "important"}
                   </span>
                 </div>
                 <p

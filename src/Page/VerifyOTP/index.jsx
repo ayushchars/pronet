@@ -5,11 +5,12 @@ import { useAuth } from "../../context/AuthContext";
 export default function VerifyOTPPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { verifyOTP, loading, error, setError } = useAuth();
+  const { verifyOTP, resendOTP, loading, error, setError } = useAuth();
 
   const [otp, setOtp] = useState("");
   const [localError, setLocalError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [temporaryOTP, setTemporaryOTP] = useState(null);
   const [email, setEmail] = useState("");
   const [resendTimer, setResendTimer] = useState(0);
   const [flowType, setFlowType] = useState("register"); // "register" or "login"
@@ -83,6 +84,7 @@ export default function VerifyOTPPage() {
   const handleResendOTP = async () => {
     setLocalError("");
     setError(null);
+    setTemporaryOTP(null);
 
     if (!email) {
       setLocalError("Email not found");
@@ -91,9 +93,11 @@ export default function VerifyOTPPage() {
 
     try {
       // Call resendOTP from auth context
-      const response = await useAuth().resendOTP(email);
+      const response = await resendOTP(email);
       if (response) {
-        setSuccessMessage("OTP resent to your email!");
+        const newOTP = response.data?.otp || response.otp;
+        setTemporaryOTP(newOTP);
+        setSuccessMessage(`✅ OTP resent! Temporary OTP for testing: ${newOTP}`);
         setResendTimer(60); // 60 second cooldown
         setOtp("");
       }
