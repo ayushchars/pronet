@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, useLocation } from "react-router-dom"
+import { Toaster } from "sonner";
 import AppRouters from "./Router";
 import { ModalVideoProvider } from "./Components/Video/ModalVideoContext";
 import { AuthProvider } from "./context/AuthContext";
@@ -13,6 +14,7 @@ const AppContent = () => {
 
     return (
         <>
+            <Toaster position="top-right" richColors />
             {!isAuthPage && <Navbar />}
             {!isAuthPage && <Sidebar />}
             <ModalVideoProvider>

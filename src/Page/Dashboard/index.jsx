@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { useSocket } from "../../context/SocketContext";
 import { useNavigate } from "react-router-dom";
 import { authAPI, meetingAPI, announcementAPI, paymentAPI, teamAPI } from "../../services/api";
 
 export default function Dashboard() {
   const { user, isAuthenticated } = useAuth();
+  const { socket } = useSocket();
   const navigate = useNavigate();
 
   const [metrics, setMetrics] = useState(null);
@@ -82,6 +84,44 @@ export default function Dashboard() {
 
     fetchDashboardData();
   }, [isAuthenticated, navigate]);
+
+  // Socket listener for real-time announcement updates
+  useEffect(() => {
+    if (!socket) return;
+
+    // Listen for new announcement
+    socket.on('announcement_created', (data) => {
+      console.log('📊 Dashboard: New announcement received', data);
+      if (data.announcementData) {
+        setAnnouncements((prev) => [data.announcementData, ...prev]);
+      }
+    });
+
+    // Listen for announcement deletion
+    socket.on('announcement_deleted', (data) => {
+      console.log('📊 Dashboard: Announcement deleted', data);
+      setAnnouncements((prev) =>
+        prev.filter((ann) => ann._id !== data.announcementId)
+      );
+    });
+
+    // Listen for announcement update
+    socket.on('announcement_updated', (data) => {
+      console.log('📊 Dashboard: Announcement updated', data);
+      setAnnouncements((prev) =>
+        prev.map((ann) =>
+          ann._id === data.announcementId ? { ...ann, ...data.updatedData } : ann
+        )
+      );
+    });
+
+    // Cleanup listeners on unmount
+    return () => {
+      socket.off('announcement_created');
+      socket.off('announcement_deleted');
+      socket.off('announcement_updated');
+    };
+  }, [socket]);
 
   const StatCard = ({ title, value, icon, color }) => (
     <div

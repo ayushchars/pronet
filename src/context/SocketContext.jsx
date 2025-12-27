@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import io from 'socket.io-client';
+import { toast } from 'sonner';
 import { useAuth } from './AuthContext';
 
 const SocketContext = createContext();
@@ -79,6 +80,45 @@ export const SocketProvider = ({ children }) => {
     // Payout events
     newSocket.on('payout_status', (data) => {
       console.log('Payout status:', data);
+    });
+
+    // Announcement events
+    newSocket.on('announcement_created', (data) => {
+      console.log('📢 NEW ANNOUNCEMENT RECEIVED VIA SOCKET:', data);
+      console.log('Announcement data:', data.announcementData);
+      
+      const announcementTitle = data.announcementData?.title || 'New Announcement';
+      const announcementDesc = data.announcementData?.description || 'A new announcement has been posted';
+      
+      // Show toast notification
+      toast.success('📢 New Announcement!', {
+        description: announcementTitle,
+        duration: 5000,
+      });
+      
+      console.log('✅ Toast notification displayed');
+      
+      // Also add to notifications array
+      setNotifications((prev) => [
+        {
+          type: 'announcement',
+          title: 'New Announcement',
+          message: announcementTitle,
+          data: data.announcementData,
+          timestamp: new Date(),
+        },
+        ...prev,
+      ]);
+    });
+
+    newSocket.on('announcement_updated', (data) => {
+      console.log('📝 Announcement updated:', data);
+      // You can dispatch this to update the announcement in your store/state
+    });
+
+    newSocket.on('announcement_deleted', (data) => {
+      console.log('🗑️ Announcement deleted:', data);
+      // You can dispatch this to remove the announcement from your store/state
     });
 
     setSocket(newSocket);

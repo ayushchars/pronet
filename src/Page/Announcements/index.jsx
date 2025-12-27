@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { useSocket } from "../../context/SocketContext";
 import { announcementAPI } from "../../services/api";
 
 export default function AnnouncementsPage() {
   const navigate = useNavigate();
   const { isAuthenticated, user } = useAuth();
+  const { socket } = useSocket();
   const isAdmin = user?.role === "Admin";
 
   const [announcements, setAnnouncements] = useState([]);
@@ -32,6 +34,56 @@ export default function AnnouncementsPage() {
 
     fetchAnnouncements();
   }, [isAuthenticated, navigate]);
+
+  // Socket listener for real-time announcement updates
+  useEffect(() => {
+    if (!socket) return;
+
+    // Listen for new announcement
+    socket.on('announcement_created', (data) => {
+      console.log('📢 Received new announcement via socket:', data);
+      // Add the new announcement to the list
+      if (data.announcementData) {
+        setAnnouncements((prev) => [data.announcementData, ...prev]);
+        setSuccessMessage('New announcement received!');
+        setTimeout(() => setSuccessMessage(''), 3000);
+      }
+    });
+
+    // Listen for announcement update
+    socket.on('announcement_updated', (data) => {
+      console.log('📝 Announcement updated via socket:', data);
+      // Update the announcement in the list
+      setAnnouncements((prev) =>
+        prev.map((ann) =>
+          ann._id === data.announcementId ? { ...ann, ...data.updatedData } : ann
+        )
+      );
+      if (selectedAnnouncement?._id === data.announcementId) {
+        setSelectedAnnouncement((prev) => ({ ...prev, ...data.updatedData }));
+      }
+    });
+
+    // Listen for announcement deletion
+    socket.on('announcement_deleted', (data) => {
+      console.log('🗑️ Announcement deleted via socket:', data);
+      // Remove the announcement from the list
+      setAnnouncements((prev) =>
+        prev.filter((ann) => ann._id !== data.announcementId)
+      );
+      if (selectedAnnouncement?._id === data.announcementId) {
+        setActiveView('list');
+        setSelectedAnnouncement(null);
+      }
+    });
+
+    // Cleanup listeners on unmount
+    return () => {
+      socket.off('announcement_created');
+      socket.off('announcement_updated');
+      socket.off('announcement_deleted');
+    };
+  }, [socket, selectedAnnouncement]);
 
   const fetchAnnouncements = async () => {
     try {
