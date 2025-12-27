@@ -233,6 +233,7 @@ export const paymentAPI = {
 
 // ===== TEAM ENDPOINTS =====
 export const teamAPI = {
+  // Team management endpoints
   getTeams: async () => {
     return apiCall('/team/list', 'GET');
   },
@@ -259,6 +260,27 @@ export const teamAPI = {
 
   removeTeamMember: async (teamId, memberId) => {
     return apiCall(`/team/${teamId}/remove-member/${memberId}`, 'DELETE');
+  },
+
+  // Referral system endpoints
+  initializeMembership: async () => {
+    return apiCall('/team/init-membership', 'POST');
+  },
+
+  getMyReferralCode: async () => {
+    return apiCall('/team/my-referral-code', 'GET');
+  },
+
+  validateReferralCode: async (code) => {
+    return apiCall('/team/validate-referral-code', 'POST', { code });
+  },
+
+  applyReferralCode: async (code) => {
+    return apiCall('/team/apply-referral-code', 'POST', { code });
+  },
+
+  getDownlineStructure: async () => {
+    return apiCall('/team/downline-structure/me', 'GET');
   },
 };
 
